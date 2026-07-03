@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Play free Klondike Solitaire online. Classic card game with drag-and-drop.">
+  <title>Klondike Solitaire</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="title">Klondike Solitaire</h1>
+      <div class="stats">
+        <span class="stat"><span class="stat-label">Time</span> <span id="timer">00:00</span></span>
+        <span class="stat"><span class="stat-label">Moves</span> <span id="moves">0</span></span>
+      </div>
+      <div class="controls">
+        <button id="btn-new-game" class="btn" type="button">New Game</button>
+        <button id="btn-hint" class="btn btn-secondary" type="button">Hint</button>
+        <label class="draw-toggle">
+          <input type="checkbox" id="draw-one" checked>
+          Draw 1
+        </label>
+      </div>
+    </header>
+
+    <main id="game-board" class="game-board" aria-label="Solitaire game board">
+      <section class="top-row">
+        <div class="pile-group stock-group">
+          <div id="stock" class="pile stock" data-pile="stock" aria-label="Stock pile"></div>
+          <div id="waste" class="pile waste" data-pile="waste" aria-label="Waste pile"></div>
+        </div>
+        <div class="pile-group foundations">
+          <div class="pile foundation" data-pile="foundation" data-index="0" aria-label="Foundation hearts"></div>
+          <div class="pile foundation" data-pile="foundation" data-index="1" aria-label="Foundation diamonds"></div>
+          <div class="pile foundation" data-pile="foundation" data-index="2" aria-label="Foundation clubs"></div>
+          <div class="pile foundation" data-pile="foundation" data-index="3" aria-label="Foundation spades"></div>
+        </div>
+      </section>
+
+      <section class="tableau">
+        <div class="pile tableau-pile" data-pile="tableau" data-index="0" aria-label="Tableau pile 1"></div>
+        <div class="pile tableau-pile" data-pile="tableau" data-index="1" aria-label="Tableau pile 2"></div>
+        <div class="pile tableau-pile" data-pile="tableau" data-index="2" aria-label="Tableau pile 3"></div>
+        <div class="pile tableau-pile" data-pile="tableau" data-index="3" aria-label="Tableau pile 4"></div>
+        <div class="pile tableau-pile" data-pile="tableau" data-index="4" aria-label="Tableau pile 5"></div>
+        <div class="pile tableau-pile" data-pile="tableau" data-index="5" aria-label="Tableau pile 6"></div>
+        <div class="pile tableau-pile" data-pile="tableau" data-index="6" aria-label="Tableau pile 7"></div>
+      </section>
+    </main>
+
+    <div id="win-overlay" class="overlay hidden" role="dialog" aria-labelledby="win-title">
+      <div class="overlay-card">
+        <h2 id="win-title">You Win!</h2>
+        <p id="win-stats"></p>
+        <button id="btn-play-again" class="btn" type="button">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
